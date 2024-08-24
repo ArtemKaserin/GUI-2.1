@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Введите ваше число: ");
+        int digit = scan.nextInt();
+
+        int first = 1;
+        int second = 1;
+        int summa;
+        int a = 0;
+
+        for (int i = 0; i < digit; i++) {
+            summa = first + second;
+            if (summa == digit) {
+                System.out.println("Ваше число лежит в последовательности Фибоначчи");
+                a = 1;
+                break;
+            } else {
+                first = second;
+                second = summa;
+            }
+        }
+        if (a == 0)
+            System.out.println("Ваше число не лежит в последовательности Фибоначчи");
+    }
+}
